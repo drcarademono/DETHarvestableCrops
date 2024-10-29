@@ -1,0 +1,36 @@
+{
+    "Version": "1",
+    "Sections": [
+        {
+            "Name": "Options",
+            "Description": null,
+            "IsAdvanced": false,
+            "Keys": [
+                {
+                    "Min": 1,
+                    "Max": 90,
+                    "Value": 10,
+                    "Name": "GrowDays",
+                    "Description": "Harvested crops are unlootable for this number of days.",
+                    "$version": "v1",
+                    "$type": "DaggerfallWorkshop.Game.Utility.ModSupport.ModSettings.SliderIntKey"
+                },
+                {
+                    "Value": false,
+                    "Name": "AlwaysSuccesful",
+                    "Description": "Base harvesting is always succesful and not affected by skill.",
+                    "$version": "v1",
+                    "$type": "DaggerfallWorkshop.Game.Utility.ModSupport.ModSettings.ToggleKey"
+                },
+                {
+                    "Value": true,
+                    "Name": "NeedReputation",
+                    "Description": "Positive reputation is needed to have permission to harvest farm owned crops.",
+                    "$version": "v1",
+                    "$type": "DaggerfallWorkshop.Game.Utility.ModSupport.ModSettings.ToggleKey"
+                }
+            ],
+            "$version": "v1"
+        }
+    ]
+}

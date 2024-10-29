@@ -1,0 +1,7 @@
+schema: *key, $text
+
+SuccessOnce,        "{0} acquired!"
+SuccessAmount,      "{0} (X{1}) acquired!"
+Failure,            "Nothing of value..."
+LowReputation,      "The farmer doesn't want you here.",
+TheftDetected,      "The farmer saw you stealing crops..."

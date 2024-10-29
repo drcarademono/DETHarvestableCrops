@@ -1,0 +1,12 @@
+{
+    "Components": [
+        {
+            "Record": 8,
+            "IngredientGroup": "PlantIngredients1",
+            "PlantIngredients1": "Yellow_berries",
+            "PlantIngredients2": "Twigs",
+            "$type": "HarvestableCrops.HarvestableCrop"
+        }
+    ],
+    "Children": null
+}
