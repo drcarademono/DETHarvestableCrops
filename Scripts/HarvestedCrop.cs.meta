@@ -1,11 +1,10 @@
 fileFormatVersion: 2
-guid: 91790898f0bf56af4914cd3561ee05d7
-MonoImporter:
+guid: aaff3723527ce0c4c899583fa2eec1bd
+timeCreated: 1730213754
+licenseType: Free
+NativeFormatImporter:
   externalObjects: {}
-  serializedVersion: 2
-  defaultReferences: []
-  executionOrder: 0
-  icon: {instanceID: 0}
-  userData: 
-  assetBundleName: 
-  assetBundleVariant: 
+  mainObjectFileID: 4900000
+  userData:
+  assetBundleName: harvestablecrops.dfmod
+  assetBundleVariant:

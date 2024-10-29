@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 136544110592118984}
   - component: {fileID: -2626575294446599412}
   m_Layer: 0
-  m_Name: 1037_20
+  m_Name: 1035_20
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -55,10 +55,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1194129543115166}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b44136c392aaa334f8837a88a151d438, type: 3}
+  m_Script: {fileID: 11500000, guid: 06f9bc2ea53454a489f19acf18582ade, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   Record: 20
+  validSeasons: 14
   IngredientGroup: 15
   PlantIngredients1: 8
   PlantIngredients2: 8
+  CustomIngredient: 0

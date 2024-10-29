@@ -1,4 +1,4 @@
-// Project:         DET Harvestable Crops for Daggerfall Unity
+// Project:         Harvestable Crops for Daggerfall Unity
 // License:         MIT License (http://www.opensource.org/licenses/mit-license.php)
 // Developer:       TheLacus
 

@@ -14,7 +14,6 @@ using DaggerfallWorkshop.Game.UserInterfaceWindows;
 using DaggerfallWorkshop.Game.Utility.ModSupport;
 using DaggerfallWorkshop.Utility;
 using DaggerfallConnect.Arena2;
-using DaggerfallConnect.FallExe;
 
 namespace HarvestableCrops
 {
@@ -59,20 +58,6 @@ namespace HarvestableCrops
         public int worldTextureRecord;
         public int playerTextureArchive;
         public int playerTextureRecord;
-    }
-
-    public enum DETIngredients
-    {
-        Cherries = 288,
-        Pear = 289,
-        Plum = 290,
-        Peach = 291,
-        Olives = 292,
-        Red_grapes = 293,
-        White_grapes = 294,
-        Cabbage_head = 295,
-        Bundle_of_wheat = 296,
-        Grain = 297
     }
 
     [FullSerializer.fsObject("v1")]
@@ -161,8 +146,6 @@ namespace HarvestableCrops
             mod.LoadSettingsCallback = (settings, _) => settings.Deserialize("Options", ref instance);
             mod.LoadSettings();
 
-            instance.RegisterCustomItems();
-
             mod.IsReady = true;
         }
 
@@ -175,6 +158,18 @@ namespace HarvestableCrops
         private void Start()
         {
             TextProvider = new TextProvider(mod);
+
+            // Register custom items
+            DaggerfallUnity.Instance.ItemHelper.RegisterCustomItem(ItemCherries.templateIndex, ItemGroups.UselessItems1, typeof(ItemCherries));
+            DaggerfallUnity.Instance.ItemHelper.RegisterCustomItem(ItemPear.templateIndex, ItemGroups.UselessItems1, typeof(ItemPear));
+            DaggerfallUnity.Instance.ItemHelper.RegisterCustomItem(ItemPlum.templateIndex, ItemGroups.UselessItems1, typeof(ItemPlum));
+            DaggerfallUnity.Instance.ItemHelper.RegisterCustomItem(ItemPeach.templateIndex, ItemGroups.UselessItems1, typeof(ItemPeach));
+            DaggerfallUnity.Instance.ItemHelper.RegisterCustomItem(ItemOlives.templateIndex, ItemGroups.UselessItems1, typeof(ItemOlives));
+            DaggerfallUnity.Instance.ItemHelper.RegisterCustomItem(ItemRedGrapes.templateIndex, ItemGroups.UselessItems1, typeof(ItemRedGrapes));
+            DaggerfallUnity.Instance.ItemHelper.RegisterCustomItem(ItemWhiteGrapes.templateIndex, ItemGroups.UselessItems1, typeof(ItemWhiteGrapes));
+            DaggerfallUnity.Instance.ItemHelper.RegisterCustomItem(ItemCabbageHead.templateIndex, ItemGroups.UselessItems1, typeof(ItemCabbageHead));
+            DaggerfallUnity.Instance.ItemHelper.RegisterCustomItem(ItemBundleOfWheat.templateIndex, ItemGroups.UselessItems1, typeof(ItemBundleOfWheat));
+            DaggerfallUnity.Instance.ItemHelper.RegisterCustomItem(ItemGrain.templateIndex, ItemGroups.UselessItems1, typeof(ItemGrain));
         }
 
         #endregion
@@ -269,41 +264,6 @@ namespace HarvestableCrops
             Debug.LogErrorFormat(context ?? this, "{0}: {1}", this.ToString(), message);
         }
 
-internal void RegisterCustomItems()
-{
-    ItemHelper itemHelper = DaggerfallUnity.Instance.ItemHelper;
-
-    // Register each custom ingredient from the static array
-    foreach (var template in CustomItemTemplates)
-    {
-        int index = template.index;
-        string name = template.name;
-
-        // Register custom item with ItemHelper
-        itemHelper.RegisterCustomItem(index, ItemGroups.PlantIngredients1);
-
-        Debug.Log($"Registered custom ingredient: {name} with index {index}");
-    }
-
-    int[] customItems = itemHelper.GetCustomItemsForGroup(ItemGroups.PlantIngredients1);
-
-    Debug.Log("Custom items registered in PlantIngredients1:");
-    foreach (int itemIndex in customItems)
-    {
-        ItemTemplate itemTemplate = itemHelper.GetItemTemplate(ItemGroups.PlantIngredients1, itemIndex);
-
-        // Check if the itemTemplate is essentially uninitialized
-        if (itemTemplate.index == 0 && string.IsNullOrEmpty(itemTemplate.name))
-        {
-            Debug.LogWarning($"Failed to retrieve valid ItemTemplate for index: {itemIndex}");
-        }
-        else
-        {
-            Debug.Log($"Item index: {itemIndex}, Name: {itemTemplate.name}");
-        }
-    }
-}
-
         private void LogErrorMessage(string message)
         {
             Debug.LogError(message);
@@ -337,219 +297,5 @@ internal void RegisterCustomItems()
         }
 
         #endregion
-
-        public static readonly ItemTemplateData[] CustomItemTemplates = new ItemTemplateData[]
-        {
-            new ItemTemplateData
-            {
-                index = 750,
-                name = "Cherries",
-                baseWeight = 0.25f,
-                hitPoints = 4,
-                capacityOrTarget = 0,
-                basePrice = 2,
-                enchantmentPoints = 0,
-                rarity = 3,
-                variants = 5,
-                drawOrderOrEffect = 25,
-                isBluntWeapon = false,
-                isLiquid = false,
-                isOneHanded = false,
-                isIngredient = true,
-                worldTextureArchive = 1021,
-                worldTextureRecord = 0,
-                playerTextureArchive = 1021,
-                playerTextureRecord = 0
-            },
-            new ItemTemplateData
-            {
-                index = 751,
-                name = "Pear",
-                baseWeight = 0.25f,
-                hitPoints = 5,
-                capacityOrTarget = 0,
-                basePrice = 2,
-                enchantmentPoints = 0,
-                rarity = 3,
-                variants = 12,
-                drawOrderOrEffect = 27,
-                isBluntWeapon = false,
-                isLiquid = false,
-                isOneHanded = false,
-                isIngredient = true,
-                worldTextureArchive = 1021,
-                worldTextureRecord = 1,
-                playerTextureArchive = 1021,
-                playerTextureRecord = 1
-            },
-            new ItemTemplateData
-            {
-                index = 752,
-                name = "Plum",
-                baseWeight = 0.25f,
-                hitPoints = 5,
-                capacityOrTarget = 1,
-                basePrice = 4,
-                enchantmentPoints = 0,
-                rarity = 3,
-                variants = 16,
-                drawOrderOrEffect = 4,
-                isBluntWeapon = false,
-                isLiquid = false,
-                isOneHanded = false,
-                isIngredient = true,
-                worldTextureArchive = 1021,
-                worldTextureRecord = 2,
-                playerTextureArchive = 1021,
-                playerTextureRecord = 2
-            },
-            new ItemTemplateData
-            {
-                index = 753,
-                name = "Peach",
-                baseWeight = 0.25f,
-                hitPoints = 5,
-                capacityOrTarget = 0,
-                basePrice = 4,
-                enchantmentPoints = 0,
-                rarity = 3,
-                variants = 12,
-                drawOrderOrEffect = 23,
-                isBluntWeapon = false,
-                isLiquid = false,
-                isOneHanded = false,
-                isIngredient = true,
-                worldTextureArchive = 1021,
-                worldTextureRecord = 3,
-                playerTextureArchive = 1021,
-                playerTextureRecord = 3
-            },
-            new ItemTemplateData
-            {
-                index = 754,
-                name = "Olives",
-                baseWeight = 0.25f,
-                hitPoints = 12,
-                capacityOrTarget = 0,
-                basePrice = 2,
-                enchantmentPoints = 0,
-                rarity = 3,
-                variants = 14,
-                drawOrderOrEffect = 32,
-                isBluntWeapon = false,
-                isLiquid = false,
-                isOneHanded = false,
-                isIngredient = true,
-                worldTextureArchive = 1021,
-                worldTextureRecord = 4,
-                playerTextureArchive = 1021,
-                playerTextureRecord = 4
-            },
-            new ItemTemplateData
-            {
-                index = 755,
-                name = "Red_grapes",
-                baseWeight = 0.25f,
-                hitPoints = 5,
-                capacityOrTarget = 0,
-                basePrice = 4,
-                enchantmentPoints = 0,
-                rarity = 4,
-                variants = 14,
-                drawOrderOrEffect = 18,
-                isBluntWeapon = false,
-                isLiquid = false,
-                isOneHanded = false,
-                isIngredient = true,
-                worldTextureArchive = 1021,
-                worldTextureRecord = 14,
-                playerTextureArchive = 1021,
-                playerTextureRecord = 14
-            },
-            new ItemTemplateData
-            {
-                index = 756,
-                name = "White_grapes",
-                baseWeight = 0.25f,
-                hitPoints = 5,
-                capacityOrTarget = 0,
-                basePrice = 4,
-                enchantmentPoints = 0,
-                rarity = 3,
-                variants = 9,
-                drawOrderOrEffect = 4,
-                isBluntWeapon = false,
-                isLiquid = false,
-                isOneHanded = false,
-                isIngredient = true,
-                worldTextureArchive = 1021,
-                worldTextureRecord = 15,
-                playerTextureArchive = 1021,
-                playerTextureRecord = 15
-            },
-            new ItemTemplateData
-            {
-                index = 757,
-                name = "Cabbage_head",
-                baseWeight = 0.5f,
-                hitPoints = 5,
-                capacityOrTarget = 0,
-                basePrice = 4,
-                enchantmentPoints = 0,
-                rarity = 2,
-                variants = 12,
-                drawOrderOrEffect = 8,
-                isBluntWeapon = false,
-                isLiquid = false,
-                isOneHanded = false,
-                isIngredient = true,
-                worldTextureArchive = 1021,
-                worldTextureRecord = 16,
-                playerTextureArchive = 1021,
-                playerTextureRecord = 16
-            },
-            new ItemTemplateData
-            {
-                index = 758,
-                name = "Bundle_of_wheat",
-                baseWeight = 2f,
-                hitPoints = 12,
-                capacityOrTarget = 0,
-                basePrice = 2,
-                enchantmentPoints = 0,
-                rarity = 1,
-                variants = 14,
-                drawOrderOrEffect = 32,
-                isBluntWeapon = false,
-                isLiquid = false,
-                isOneHanded = false,
-                isIngredient = true,
-                worldTextureArchive = 1024,
-                worldTextureRecord = 0,
-                playerTextureArchive = 1024,
-                playerTextureRecord = 0
-            },
-            new ItemTemplateData
-            {
-                index = 759,
-                name = "Grain",
-                baseWeight = 5f,
-                hitPoints = 12,
-                capacityOrTarget = 0,
-                basePrice = 4,
-                enchantmentPoints = 0,
-                rarity = 1,
-                variants = 14,
-                drawOrderOrEffect = 18,
-                isBluntWeapon = false,
-                isLiquid = false,
-                isOneHanded = false,
-                isIngredient = true,
-                worldTextureArchive = 1024,
-                worldTextureRecord = 2,
-                playerTextureArchive = 1024,
-                playerTextureRecord = 2
-            }
-        };
     }
 }

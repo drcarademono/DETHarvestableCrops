@@ -10,6 +10,7 @@
         "Assets/Game/Mods/DETHarvestableCrops/Scripts/HarvestableCrops.cs",
         "Assets/Game/Mods/DETHarvestableCrops/Scripts/HarvestedCrop.cs",
         "Assets/Game/Mods/DETHarvestableCrops/Scripts/HarvestableCrop.cs",
+        "Assets/Game/Mods/DETHarvestableCrops/Scripts/DETItems.cs",
         "Assets/Game/Mods/DETHarvestableCrops/modsettings.json",
         "Assets/Game/Mods/DETHarvestableCrops/textdatabase.txt",
         "Assets/Game/Mods/DETHarvestableCrops/Assets/1035_1.prefab",
@@ -37,6 +38,6 @@
         "Assets/Game/Mods/DETHarvestableCrops/Assets/1035_21.prefab",
         "Assets/Game/Mods/DETHarvestableCrops/Assets/1035_20.prefab",
         "Assets/Game/Mods/DETHarvestableCrops/DETHarvestableCrops.dfmod.json",
-        "Assets/Game/Mods/DETHarvestableCrops/DETIngredients.json"
+        "Assets/Game/Mods/DETHarvestableCrops/ItemTemplates.json"
     ]
 }

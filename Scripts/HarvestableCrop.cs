@@ -138,6 +138,7 @@ namespace HarvestableCrops
                 ingredientIndex = CustomIngredient;  // Use custom ingredient index if set
             }
             else if (IngredientGroup == ItemGroups.PlantIngredients1)
+            if (IngredientGroup == ItemGroups.PlantIngredients1)
                 ingredientIndex = Array.IndexOf(plantIngredients1, (int)PlantIngredients1);
             else if (IngredientGroup == ItemGroups.PlantIngredients2)
                 ingredientIndex = Array.IndexOf(plantIngredients2, (int)PlantIngredients2);
@@ -206,11 +207,7 @@ namespace HarvestableCrops
             int amount = AttemptHarvest();
             if (amount > 0)
             {
-                // Create ingredient item using custom ingredient if set, or standard group otherwise
-                DaggerfallUnityItem ingredient = CustomIngredient != 0 
-                    ? ItemBuilder.CreateItem(IngredientGroup, CustomIngredient)
-                    : new DaggerfallUnityItem(IngredientGroup, ingredientIndex);
-
+                DaggerfallUnityItem ingredient = new DaggerfallUnityItem(IngredientGroup, ingredientIndex);
                 if (!theft || !TheftDetected(ingredient.weightInKg, amount))
                 {
                     GameManager.Instance.PlayerEntity.Items.AddItem(ingredient);
