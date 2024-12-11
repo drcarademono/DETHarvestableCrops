@@ -85,7 +85,7 @@
         "baseWeight":  0.25,
         "hitPoints":  12,
         "capacityOrTarget":  0,
-        "basePrice":  2,
+        "basePrice":  4,
         "enchantmentPoints":  0,
         "rarity":  3,
         "variants":  14,
@@ -198,5 +198,25 @@
         "worldTextureRecord":  2,
         "playerTextureArchive":  1024,
         "playerTextureRecord":  2
+    },
+    {
+        "index":  760,
+        "name":  "Tomato",
+        "baseWeight":  0.25,
+        "hitPoints":  5,
+        "capacityOrTarget":  1,
+        "basePrice":  2,
+        "enchantmentPoints":  0,
+        "rarity":  1,
+        "variants":  16,
+        "drawOrderOrEffect":  4,
+        "isBluntWeapon":  false,
+        "isLiquid":  false,
+        "isOneHanded":  false,
+        "isIngredient":  true,
+        "worldTextureArchive":  1021,
+        "worldTextureRecord":  12,
+        "playerTextureArchive":  1021,
+        "playerTextureRecord":  12
     }
 ]

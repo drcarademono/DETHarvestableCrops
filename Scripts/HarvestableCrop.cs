@@ -34,7 +34,10 @@ namespace HarvestableCrops
         readonly static int[] plantIngredients1 = GetEnumValues(typeof(PlantIngredients1));
         readonly static int[] plantIngredients2 = GetEnumValues(typeof(PlantIngredients2));
 
-        [Tooltip("Texture record for the billboard inside archive 1035.")]
+        [Tooltip("Texture archive for the billboard.")]
+        public int Archive;
+
+        [Tooltip("Texture record for the billboard.")]
         public int Record;
 
         // Enum to represent each season
@@ -95,40 +98,55 @@ namespace HarvestableCrops
             int archive;
             bool enableCollider = true;
 
+            int record = Record;
+
             switch (currentSeason)
             {
                 case DaggerfallDateTime.Seasons.Winter:
                     // Check if in desert region
                     if (IsInDesert())
                     {
-                        archive = 1035; // Use spring texture in deserts during winter
+                        archive = Archive; // Use spring texture in deserts during winter
                     }
                     else
                     {
-                        archive = 1038; // Use winter texture
+                        if(Archive == 1035) {
+                            archive = 1038; // Use winter texture
+                        } else {
+                            archive = 511;
+                            record = 22;                       
+                        }
                         enableCollider = false; // Disable collider for winter (non-desert)
                     }
                     break;
 
                 case DaggerfallDateTime.Seasons.Spring:
-                    archive = 1035; // Spring texture
+                    archive = Archive; // Spring texture
                     break;
 
                 case DaggerfallDateTime.Seasons.Summer:
-                    archive = 1036; // Summer texture
+                        if(Archive == 1035) {
+                            archive = 1036; // Use winter texture
+                        } else {
+                            archive = Archive;                    
+                        }
                     break;
 
                 case DaggerfallDateTime.Seasons.Fall:
-                    archive = 1037; // Fall texture
+                        if(Archive == 1035) {
+                            archive = 1037; // Use winter texture
+                        } else {
+                            archive = Archive;                    
+                        }
                     break;
 
                 default:
-                    archive = 1035; // Default to spring texture as a fallback
+                    archive = Archive; // Default to spring texture as a fallback
                     break;
             }
 
             // Set up the billboard and collider
-            SetupBillboardWithTrigger(archive, Record);
+            SetupBillboardWithTrigger(archive, record);
             collider.enabled = enableCollider;
 
             // Set harvestable ingredient

@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &1938684473454929
+--- !u!1 &1517275060812674
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,37 +8,37 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 4014692431214971}
-  - component: {fileID: 136501261713813020}
-  - component: {fileID: 8460955193880605829}
+  - component: {fileID: 4479984475809867}
+  - component: {fileID: 136281398424315177}
+  - component: {fileID: -3665331167996995494}
   m_Layer: 0
-  m_Name: 1035_3
+  m_Name: 301_22
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4014692431214971
+--- !u!4 &4479984475809867
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1938684473454929}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_GameObject: {fileID: 1517275060812674}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!136 &136501261713813020
+  m_LocalEulerAnglesHint: {x: 0, y: -0, z: -0}
+--- !u!136 &136281398424315177
 CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1938684473454929}
+  m_GameObject: {fileID: 1517275060812674}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
@@ -46,22 +46,22 @@ CapsuleCollider:
   m_Height: 1
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &8460955193880605829
+--- !u!114 &-3665331167996995494
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1938684473454929}
+  m_GameObject: {fileID: 1517275060812674}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 06f9bc2ea53454a489f19acf18582ade, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Archive: 1035
-  Record: 3
-  validSeasons: 12
+  Archive: 301
+  Record: 22
+  validSeasons: 14
   IngredientGroup: 15
-  PlantIngredients1: 8
+  PlantIngredients1: 18
   PlantIngredients2: 8
-  CustomIngredient: 755
+  CustomIngredient: 0
