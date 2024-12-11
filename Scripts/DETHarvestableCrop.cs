@@ -18,14 +18,14 @@ using DaggerfallWorkshop.Game.Utility;
 using DaggerfallWorkshop.Game.Utility.ModSupport;
 using DaggerfallWorkshop.Utility;
 
-namespace HarvestableCrops
+namespace DETHarvestableCrops
 {
     /// <summary>
     /// Makes a crop lootable for ingredients according to character luck.
     /// </summary>
     [ImportedComponent]
     [RequireComponent(typeof(CapsuleCollider))]
-    public class HarvestableCrop : MonoBehaviour, IPlayerActivable
+    public class DETHarvestableCrop : MonoBehaviour, IPlayerActivable
     {
         #region Fields
 
@@ -81,14 +81,14 @@ namespace HarvestableCrops
 
         private void Awake()
         {
-            HarvestableCrops.Instance.OnRestoreSaveData += HarvestableCrops_OnRestoreSaveData;
+            DETHarvestableCrops.Instance.OnRestoreSaveData += DETHarvestableCrops_OnRestoreSaveData;
         }
 
         private void Start()
         {
             // Initialize text provider
-            if ((textProvider = HarvestableCrops.Instance.TextProvider) == null)
-                HarvestableCrops.Instance.LogErrorMessage("TextProvider is null.");
+            if ((textProvider = DETHarvestableCrops.Instance.TextProvider) == null)
+                DETHarvestableCrops.Instance.LogErrorMessage("TextProvider is null.");
 
             // Get current season
             DaggerfallDateTime dateTime = DaggerfallUnity.Instance.WorldTime.Now;
@@ -168,7 +168,7 @@ namespace HarvestableCrops
 
         private void OnDestroy()
         {
-            HarvestableCrops.Instance.OnRestoreSaveData -= HarvestableCrops_OnRestoreSaveData;
+            DETHarvestableCrops.Instance.OnRestoreSaveData -= DETHarvestableCrops_OnRestoreSaveData;
         }
 
         #endregion
@@ -245,8 +245,8 @@ namespace HarvestableCrops
             }
 
             ToggleBillboard(true);
-            HarvestableCrops.Instance.SetHarvested(transform.localPosition);
-            HarvestableCrops.Instance.IncreaseSkillProgress();
+            DETHarvestableCrops.Instance.SetHarvested(transform.localPosition);
+            DETHarvestableCrops.Instance.IncreaseSkillProgress();
             return message;
         }
 
@@ -289,7 +289,7 @@ namespace HarvestableCrops
             }
             else
             {
-                HarvestableCrops.Instance.LogErrorMessage("Failed to toggle visibility because object instance is null.", this);
+                DETHarvestableCrops.Instance.LogErrorMessage("Failed to toggle visibility because object instance is null.", this);
             }
         }
 
@@ -298,7 +298,7 @@ namespace HarvestableCrops
         /// </summary>
         private void RefreshHarvestedState()
         {
-            if (HarvestableCrops.Instance.IsHarvested(transform.localPosition) != isHarvested)
+            if (DETHarvestableCrops.Instance.IsHarvested(transform.localPosition) != isHarvested)
                 ToggleBillboard(!isHarvested);
         }
         
@@ -316,7 +316,7 @@ namespace HarvestableCrops
         /// </summary>
         private bool HasEnoughReputation()
         {
-            if (!HarvestableCrops.Instance.NeedReputation)
+            if (!DETHarvestableCrops.Instance.NeedReputation)
                 return true;
 
             int index = GameManager.Instance.PlayerGPS.CurrentRegionIndex;
@@ -385,12 +385,12 @@ namespace HarvestableCrops
 
             // Calculate harvest chance based on luck and skill progress
             int luck = GameManager.Instance.PlayerEntity.Stats.GetLiveStatValue(Stats.Luck);
-            float chance = Mathf.Lerp(0.1f, 0.95f, HarvestableCrops.Instance.SkillProgress + (((float)luck / 1000) - 0.05f));
+            float chance = Mathf.Lerp(0.1f, 0.95f, DETHarvestableCrops.Instance.SkillProgress + (((float)luck / 1000) - 0.05f));
 
             for (int i = 0; i < max; i++)
             {
                 if (Random.value >= chance)
-                    return Mathf.Max(HarvestableCrops.Instance.AlwaysSuccesful ? 1 : 0, i);
+                    return Mathf.Max(DETHarvestableCrops.Instance.AlwaysSuccesful ? 1 : 0, i);
             }
 
             return max;
@@ -440,7 +440,7 @@ namespace HarvestableCrops
 
         #region Events
 
-        private void HarvestableCrops_OnRestoreSaveData()
+        private void DETHarvestableCrops_OnRestoreSaveData()
         {
             RefreshHarvestedState();
         }

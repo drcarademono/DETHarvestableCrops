@@ -1,7 +1,7 @@
 using DaggerfallWorkshop.Game.Items;
 using DaggerfallWorkshop.Game.Serialization;
 
-namespace HarvestableCrops
+namespace DETHarvestableCrops
 {
     public class ItemCherries : DaggerfallUnityItem
     {

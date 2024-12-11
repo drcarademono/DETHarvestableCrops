@@ -15,7 +15,7 @@ using DaggerfallWorkshop.Game.Utility.ModSupport;
 using DaggerfallWorkshop.Utility;
 using DaggerfallConnect.Arena2;
 
-namespace HarvestableCrops
+namespace DETHarvestableCrops
 {
     #region Types
 
@@ -61,10 +61,10 @@ namespace HarvestableCrops
     }
 
     [FullSerializer.fsObject("v1")]
-    public class HarvestableCropsSaveData
+    public class DETHarvestableCropsSaveData
     {
         public int Progress;
-        public Dictionary<HarvestedCrop, int> HarvestedCrops;
+        public Dictionary<DETHarvestedCrop, int> DETHarvestedCrops;
     }
 
     #endregion
@@ -72,14 +72,14 @@ namespace HarvestableCrops
     /// <summary>
     /// Make crops harvestable.
     /// </summary>
-    public class HarvestableCrops : MonoBehaviour, IHasModSaveData
+    public class DETHarvestableCrops : MonoBehaviour, IHasModSaveData
     {
         #region Fields
 
         const int maxProgress = 10000;
 
         static Mod mod;
-        static HarvestableCrops instance;
+        static DETHarvestableCrops instance;
 
         /// <summary>
         /// Progress of harvesting skill.
@@ -89,7 +89,7 @@ namespace HarvestableCrops
         /// <summary>
         /// Crops which are currently harvested. Values is harvest day from zero.
         /// </summary>
-        Dictionary<HarvestedCrop, int> harvestedCrops = new Dictionary<HarvestedCrop, int>();
+        Dictionary<DETHarvestedCrop, int> harvestedCrops = new Dictionary<DETHarvestedCrop, int>();
 
         /// <summary>
         /// Harvested crops are harvestable again after this number of days.
@@ -110,14 +110,14 @@ namespace HarvestableCrops
 
         #region Properties
 
-        public static HarvestableCrops Instance
+        public static DETHarvestableCrops Instance
         {
-            get { return instance ?? (instance = FindObjectOfType<HarvestableCrops>()); }
+            get { return instance ?? (instance = FindObjectOfType<DETHarvestableCrops>()); }
         }
 
         public Type SaveDataType
         {
-            get { return typeof(HarvestableCropsSaveData); }
+            get { return typeof(DETHarvestableCropsSaveData); }
         }
 
         /// <summary>
@@ -138,8 +138,8 @@ namespace HarvestableCrops
         [Invoke(StateManager.StateTypes.Start, 0)]
         public static void Init(InitParams initParams)
         {
-            GameObject go = new GameObject("HarvestableCrops");
-            instance = go.AddComponent<HarvestableCrops>();
+            GameObject go = new GameObject("DETHarvestableCrops");
+            instance = go.AddComponent<DETHarvestableCrops>();
 
             mod = initParams.Mod;
             mod.SaveDataInterface = instance;
@@ -189,7 +189,7 @@ namespace HarvestableCrops
         /// </summary>
         public bool IsHarvested(Vector3 localPosition)
         {
-            var harvestedCrop = new HarvestedCrop(localPosition);
+            var harvestedCrop = new DETHarvestedCrop(localPosition);
 
             int harvestDate;
             bool isHarvested = harvestedCrops.TryGetValue(harvestedCrop, out harvestDate) && !IsHarvestableAgain(harvestDate);
@@ -207,7 +207,7 @@ namespace HarvestableCrops
         {
             try
             {
-                harvestedCrops.Add(new HarvestedCrop(localPosition), CurrentDay());
+                harvestedCrops.Add(new DETHarvestedCrop(localPosition), CurrentDay());
             }
             catch (Exception e)
             {
@@ -217,9 +217,9 @@ namespace HarvestableCrops
 
         public object NewSaveData()
         {
-            return new HarvestableCropsSaveData {
+            return new DETHarvestableCropsSaveData {
                 Progress = 0,
-                HarvestedCrops = new Dictionary<HarvestedCrop, int>()
+                DETHarvestedCrops = new Dictionary<DETHarvestedCrop, int>()
             };
         }
 
@@ -228,17 +228,17 @@ namespace HarvestableCrops
             if (harvestedCrops.Count == 0)
                 return null;
 
-            return new HarvestableCropsSaveData {
+            return new DETHarvestableCropsSaveData {
                 Progress = progress,
-                HarvestedCrops = harvestedCrops
+                DETHarvestedCrops = harvestedCrops
             };
         }
 
         public void RestoreSaveData(object saveData)
         {
-            var harvestableCropsSaveData = (HarvestableCropsSaveData)saveData;
+            var harvestableCropsSaveData = (DETHarvestableCropsSaveData)saveData;
             progress = Mathf.Clamp(harvestableCropsSaveData.Progress, 0, maxProgress);
-            harvestedCrops = harvestableCropsSaveData.HarvestedCrops;
+            harvestedCrops = harvestableCropsSaveData.DETHarvestedCrops;
             RaiseOnRestoreSaveDataEvent();
         }
 

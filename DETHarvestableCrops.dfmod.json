@@ -7,9 +7,9 @@
     "ModDescription": "Make DET crops harvestable.",
     "GUID": "9e03cb40-ff40-4d3f-ba6f-93239d9a8050",
     "Files": [
-        "Assets/Game/Mods/DETHarvestableCrops/Scripts/HarvestableCrops.cs",
-        "Assets/Game/Mods/DETHarvestableCrops/Scripts/HarvestedCrop.cs",
-        "Assets/Game/Mods/DETHarvestableCrops/Scripts/HarvestableCrop.cs",
+        "Assets/Game/Mods/DETHarvestableCrops/Scripts/DETHarvestableCrops.cs",
+        "Assets/Game/Mods/DETHarvestableCrops/Scripts/DETHarvestedCrop.cs",
+        "Assets/Game/Mods/DETHarvestableCrops/Scripts/DETHarvestableCrop.cs",
         "Assets/Game/Mods/DETHarvestableCrops/Scripts/DETItems.cs",
         "Assets/Game/Mods/DETHarvestableCrops/modsettings.json",
         "Assets/Game/Mods/DETHarvestableCrops/textdatabase.txt",

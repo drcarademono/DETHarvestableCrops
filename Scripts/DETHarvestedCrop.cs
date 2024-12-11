@@ -6,12 +6,12 @@ using UnityEngine;
 using DaggerfallWorkshop;
 using DaggerfallWorkshop.Game;
 
-namespace HarvestableCrops
+namespace DETHarvestableCrops
 {
     /// <summary>
     /// An harvested crop defined by its position on terrain.
     /// </summary>
-    public struct HarvestedCrop
+    public struct DETHarvestedCrop
     {
         public int MapPixelX;
         public int MapPixelY;
@@ -21,7 +21,7 @@ namespace HarvestableCrops
         /// <summary>
         /// Make an harvested crop reference at the given localposition and current location.
         /// </summary>
-        public HarvestedCrop(Vector3 localPosition)
+        public DETHarvestedCrop(Vector3 localPosition)
         {
             StreamingWorld streamingWorld = GameManager.Instance.StreamingWorld;
 
@@ -33,10 +33,10 @@ namespace HarvestableCrops
 
         public override bool Equals(object obj)
         {
-            if (!(obj is HarvestedCrop))
+            if (!(obj is DETHarvestedCrop))
                 return false;
 
-            var crop = (HarvestedCrop)obj;
+            var crop = (DETHarvestedCrop)obj;
             return MapPixelX == crop.MapPixelX &&
                    MapPixelY == crop.MapPixelY &&
                    LocalX == crop.LocalX &&
@@ -54,12 +54,12 @@ namespace HarvestableCrops
             return hashCode;
         }
 
-        public static bool operator ==(HarvestedCrop crop1, HarvestedCrop crop2)
+        public static bool operator ==(DETHarvestedCrop crop1, DETHarvestedCrop crop2)
         {
             return crop1.Equals(crop2);
         }
 
-        public static bool operator !=(HarvestedCrop crop1, HarvestedCrop crop2)
+        public static bool operator !=(DETHarvestedCrop crop1, DETHarvestedCrop crop2)
         {
             return !(crop1 == crop2);
         }
