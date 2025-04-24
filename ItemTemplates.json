@@ -14,9 +14,9 @@
         "isLiquid":  false,
         "isOneHanded":  false,
         "isIngredient":  true,
-        "worldTextureArchive":  1021,
+        "worldTextureArchive":  10021,
         "worldTextureRecord":  0,
-        "playerTextureArchive":  1021,
+        "playerTextureArchive":  10021,
         "playerTextureRecord":  0
     },
     {
@@ -34,9 +34,9 @@
         "isLiquid":  false,
         "isOneHanded":  false,
         "isIngredient":  true,
-        "worldTextureArchive":  1021,
+        "worldTextureArchive":  10021,
         "worldTextureRecord":  1,
-        "playerTextureArchive":  1021,
+        "playerTextureArchive":  10021,
         "playerTextureRecord":  1
     },
     {
@@ -54,9 +54,9 @@
         "isLiquid":  false,
         "isOneHanded":  false,
         "isIngredient":  true,
-        "worldTextureArchive":  1021,
+        "worldTextureArchive":  10021,
         "worldTextureRecord":  2,
-        "playerTextureArchive":  1021,
+        "playerTextureArchive":  10021,
         "playerTextureRecord":  2
     },
     {
@@ -74,9 +74,9 @@
         "isLiquid":  false,
         "isOneHanded":  false,
         "isIngredient":  true,
-        "worldTextureArchive":  1021,
+        "worldTextureArchive":  10021,
         "worldTextureRecord":  3,
-        "playerTextureArchive":  1021,
+        "playerTextureArchive":  10021,
         "playerTextureRecord":  3
     },
     {
@@ -94,9 +94,9 @@
         "isLiquid":  false,
         "isOneHanded":  false,
         "isIngredient":  true,
-        "worldTextureArchive":  1021,
+        "worldTextureArchive":  10021,
         "worldTextureRecord":  4,
-        "playerTextureArchive":  1021,
+        "playerTextureArchive":  10021,
         "playerTextureRecord":  4
     },
     {
@@ -114,9 +114,9 @@
         "isLiquid":  false,
         "isOneHanded":  false,
         "isIngredient":  true,
-        "worldTextureArchive":  1021,
+        "worldTextureArchive":  10021,
         "worldTextureRecord":  14,
-        "playerTextureArchive":  1021,
+        "playerTextureArchive":  10021,
         "playerTextureRecord":  14
     },
     {
@@ -134,9 +134,9 @@
         "isLiquid":  false,
         "isOneHanded":  false,
         "isIngredient":  true,
-        "worldTextureArchive":  1021,
+        "worldTextureArchive":  10021,
         "worldTextureRecord":  15,
-        "playerTextureArchive":  1021,
+        "playerTextureArchive":  10021,
         "playerTextureRecord":  15
     },
     {
@@ -154,9 +154,9 @@
         "isLiquid":  false,
         "isOneHanded":  false,
         "isIngredient":  true,
-        "worldTextureArchive":  1021,
+        "worldTextureArchive":  10021,
         "worldTextureRecord":  16,
-        "playerTextureArchive":  1021,
+        "playerTextureArchive":  10021,
         "playerTextureRecord":  16
     },
     {
@@ -174,9 +174,9 @@
         "isLiquid":  false,
         "isOneHanded":  false,
         "isIngredient":  true,
-        "worldTextureArchive":  1024,
+        "worldTextureArchive":  10024,
         "worldTextureRecord":  0,
-        "playerTextureArchive":  1024,
+        "playerTextureArchive":  10024,
         "playerTextureRecord":  0
     },
     {
@@ -194,9 +194,9 @@
         "isLiquid":  false,
         "isOneHanded":  false,
         "isIngredient":  true,
-        "worldTextureArchive":  1024,
+        "worldTextureArchive":  10024,
         "worldTextureRecord":  2,
-        "playerTextureArchive":  1024,
+        "playerTextureArchive":  10024,
         "playerTextureRecord":  2
     },
     {
@@ -214,9 +214,9 @@
         "isLiquid":  false,
         "isOneHanded":  false,
         "isIngredient":  true,
-        "worldTextureArchive":  1021,
+        "worldTextureArchive":  10021,
         "worldTextureRecord":  12,
-        "playerTextureArchive":  1021,
+        "playerTextureArchive":  10021,
         "playerTextureRecord":  12
     }
 ]

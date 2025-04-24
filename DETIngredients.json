@@ -14,7 +14,7 @@
         "isLiquid": false,
         "isOneHanded": false,
         "isIngredient": true,
-        "worldTextureArchive": 1021,
+        "worldTextureArchive": 10021,
         "worldTextureRecord": 0,
         "playerTextureArchive": 0,
         "playerTextureRecord": 0
@@ -34,7 +34,7 @@
         "isLiquid": false,
         "isOneHanded": false,
         "isIngredient": true,
-        "worldTextureArchive": 1021,
+        "worldTextureArchive": 10021,
         "worldTextureRecord": 1,
         "playerTextureArchive": 0,
         "playerTextureRecord": 0
@@ -54,7 +54,7 @@
         "isLiquid": false,
         "isOneHanded": false,
         "isIngredient": true,
-        "worldTextureArchive": 1021,
+        "worldTextureArchive": 10021,
         "worldTextureRecord": 2,
         "playerTextureArchive": 0,
         "playerTextureRecord": 0
@@ -74,7 +74,7 @@
         "isLiquid": false,
         "isOneHanded": false,
         "isIngredient": true,
-        "worldTextureArchive": 1021,
+        "worldTextureArchive": 10021,
         "worldTextureRecord": 3,
         "playerTextureArchive": 0,
         "playerTextureRecord": 0
@@ -94,7 +94,7 @@
         "isLiquid": false,
         "isOneHanded": false,
         "isIngredient": true,
-        "worldTextureArchive": 1021,
+        "worldTextureArchive": 10021,
         "worldTextureRecord": 4,
         "playerTextureArchive": 0,
         "playerTextureRecord": 0
@@ -114,7 +114,7 @@
         "isLiquid": false,
         "isOneHanded": false,
         "isIngredient": true,
-        "worldTextureArchive": 1021,
+        "worldTextureArchive": 10021,
         "worldTextureRecord": 14,
         "playerTextureArchive": 0,
         "playerTextureRecord": 0
@@ -134,7 +134,7 @@
         "isLiquid": false,
         "isOneHanded": false,
         "isIngredient": true,
-        "worldTextureArchive": 1021,
+        "worldTextureArchive": 10021,
         "worldTextureRecord": 15,
         "playerTextureArchive": 0,
         "playerTextureRecord": 0
@@ -154,7 +154,7 @@
         "isLiquid": false,
         "isOneHanded": false,
         "isIngredient": true,
-        "worldTextureArchive": 1021,
+        "worldTextureArchive": 10021,
         "worldTextureRecord": 16,
         "playerTextureArchive": 0,
         "playerTextureRecord": 0
@@ -174,7 +174,7 @@
         "isLiquid": false,
         "isOneHanded": false,
         "isIngredient": true,
-        "worldTextureArchive": 1024,
+        "worldTextureArchive": 10024,
         "worldTextureRecord": 0,
         "playerTextureArchive": 0,
         "playerTextureRecord": 0
@@ -194,7 +194,7 @@
         "isLiquid": false,
         "isOneHanded": false,
         "isIngredient": true,
-        "worldTextureArchive": 1024,
+        "worldTextureArchive": 10024,
         "worldTextureRecord": 2,
         "playerTextureArchive": 0,
         "playerTextureRecord": 0

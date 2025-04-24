@@ -110,8 +110,8 @@ namespace DETHarvestableCrops
                     }
                     else
                     {
-                        if(Archive == 1035) {
-                            archive = 1038; // Use winter texture
+                        if(Archive == 10035) {
+                            archive = 10038; // Use winter texture
                         } else {
                             archive = 511;
                             record = 22;                       
@@ -125,16 +125,16 @@ namespace DETHarvestableCrops
                     break;
 
                 case DaggerfallDateTime.Seasons.Summer:
-                        if(Archive == 1035) {
-                            archive = 1036; // Use winter texture
+                        if(Archive == 10035) {
+                            archive = 10036; // Use winter texture
                         } else {
                             archive = Archive;                    
                         }
                     break;
 
                 case DaggerfallDateTime.Seasons.Fall:
-                        if(Archive == 1035) {
-                            archive = 1037; // Use winter texture
+                        if(Archive == 10035) {
+                            archive = 10037; // Use winter texture
                         } else {
                             archive = Archive;                    
                         }
