@@ -422,11 +422,19 @@ namespace DETHarvestableCrops
         /// Checks if current season is winter and player is not in a desert region.
         /// </summary>
         /// <returns>True if is winter.</returns>
-        private static bool IsWinter()
+        private bool IsWinter()
         {
-            return GameManager.Instance.PlayerGPS.CurrentClimateIndex != (int)MapsFile.Climates.Desert &&
-                GameManager.Instance.PlayerGPS.CurrentClimateIndex != (int)MapsFile.Climates.Desert2 &&
-                DaggerfallUnity.Instance.WorldTime.Now.SeasonValue == DaggerfallDateTime.Seasons.Winter;
+            if (GameManager.Instance?.PlayerGPS == null) return false;
+            var now = DaggerfallUnity.Instance.WorldTime.Now;
+            int c = GameManager.Instance.PlayerGPS.CurrentClimateIndex;
+
+            return now.SeasonValue == DaggerfallDateTime.Seasons.Winter
+                && c != (int)MapsFile.Climates.Desert
+                && c != (int)MapsFile.Climates.Desert2
+                && c != (int)MapsFile.Climates.Subtropical
+                && (!DETHarvestableCrops.snowlessModEnabled 
+                    || (c != (int)MapsFile.Climates.Rainforest 
+                     && c != (int)MapsFile.Climates.Swamp));
         }
 
         // Helper method to check if current climate is a desert
